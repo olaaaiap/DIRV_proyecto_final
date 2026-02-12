@@ -1,0 +1,102 @@
+# Blender 4.1.1 MTL File: 'Farolar_1.blend'
+# www.blender.org
+
+newmtl Barra.001
+Ns 2.675386
+Ka 0.678161 0.678161 0.678161
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:/vd5kdabdy_4K_Albedo.jpg
+
+newmtl Barra.002
+Ns 2.675386
+Ka 0.678161 0.678161 0.678161
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:/vd5kdabdy_4K_Albedo.jpg
+
+newmtl Base.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Cylinder.jpg
+
+newmtl Base.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Cylinder.jpg
+
+newmtl Glass
+Ns 6.000004
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.250000
+illum 6
+map_Kd C:/led.jpg
+
+newmtl Mastil_Galva
+Ns 6.000004
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:/lamina-galvanizada-textura.jpg
+
+newmtl Portalamparas.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Sphere.jpg
+
+newmtl Portalamparas.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Sphere.jpg
+
+newmtl Portalamparas.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Sphere.jpg
+
+newmtl Powder_Coated_in_Grey
+Ns 6.000004
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:/lamina-galvanizada-textura.jpg
