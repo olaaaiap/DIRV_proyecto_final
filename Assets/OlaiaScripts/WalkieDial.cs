@@ -24,7 +24,7 @@ public class WalkieDial : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ExplodeCountdown());
+        //StartCoroutine(ExplodeCountdown());
     }
     void Update()
     {

@@ -97,3 +97,9 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+
+
+
+/[Aa]sset/Oculus/avatar2_SampleAssets/SampleAssets/**/PresetAvatars_Quest.zip
+/[Aa]sset/Oculus/avatar2_SampleAssets/SampleAssets/**/PresetAvatars_Rift.zip
