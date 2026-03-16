@@ -1,17 +1,22 @@
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class ContarTiempoReloj : MonoBehaviour
 {
+    private string filePath;
+
     public TextMeshPro clockText;
 
     private float elapsedTime = 0f;
     private bool isRunning = false;
 
-    public void Start()
+    void Start()
     {
+        filePath = Application.persistentDataPath + "/times.txt";
         StartClock();
     }
+
     // Llama a esta función para empezar a contar
     public void StartClock()
     {
@@ -41,6 +46,12 @@ public class ContarTiempoReloj : MonoBehaviour
             elapsedTime += Time.deltaTime;
             UpdateClockText();
         }
+
+        // Guardar tiempo al pulsar SPACE
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SaveTime();
+        }
     }
 
     private void UpdateClockText()
@@ -52,5 +63,18 @@ public class ContarTiempoReloj : MonoBehaviour
 
         // Formato HH:MM:SS
         clockText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+    }
+
+    void SaveTime()
+    {
+        int hours = Mathf.FloorToInt(elapsedTime / 3600f);
+        int minutes = Mathf.FloorToInt((elapsedTime % 3600f) / 60f);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+
+        string timeString = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+
+        File.AppendAllText(filePath, timeString + "\n");
+
+        Debug.Log("Tiempo guardado en: " + filePath);
     }
 }

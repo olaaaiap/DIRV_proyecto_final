@@ -12,6 +12,8 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
 
     [SerializeField] private Image fade;
 
+    private float timer;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
