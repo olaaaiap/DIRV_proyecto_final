@@ -5,9 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasOlaia/Tuto_ExteriorInstituto.unity
+    guid: 3d299b70890e0334e97aa8de89a5720c
+  - enabled: 1
+    path: "Assets/Scenes/Escenas/EscenasAlvaro/Ba\xF1osInsti.unity"
+    guid: c224ac82c1e133f4198d3fc8cede4872
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlvaro/Bosque.unity
+    guid: 3357eeb4c7a8a3f4fa4857000198300f
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlex/Arcade.unity
+    guid: 35253c39a62873042bbfe5677cd5a51b
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlex/Hangar.unity
+    guid: d22b4249b22284c4395468a65bf8ef46
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlvaro/CastilloByers.unity
+    guid: a43cbfdf7293dee42bd6c9943a63c82a
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlvaro/PasilloPortalOscuro.unity
+    guid: cd5db7ca9c6131348b2615001daf8a95
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlex/VecnaBossfight.unity
+    guid: 0f5e651569d44094c84ebaf9c2fa4eaf
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
