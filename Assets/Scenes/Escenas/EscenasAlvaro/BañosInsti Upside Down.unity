@@ -3959,7 +3959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597fac9c1cd84c944ae935df39ed179f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBackOnApproach
-  player: {fileID: 0}
+  player: {fileID: 1662221572}
   triggerDistance: 2
   moveOffset: {x: 5, y: 0, z: 0}
   moveSpeed: 3
