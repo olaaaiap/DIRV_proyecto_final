@@ -40912,8 +40912,7 @@ MonoBehaviour:
   speed: 2
   holdTimeToActivate: 2
   maxHeight: 10
-  maxLevitationTime: 15
-  buttonX: {fileID: -3685817364303626279, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  maxLevitationTime: 10
 --- !u!1001 &1380173535
 PrefabInstance:
   m_ObjectHideFlags: 0
