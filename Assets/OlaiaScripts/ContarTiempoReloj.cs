@@ -47,11 +47,11 @@ public class ContarTiempoReloj : MonoBehaviour
             UpdateClockText();
         }
 
-        // Guardar tiempo al pulsar SPACE
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SaveTime();
-        }
+        //// Guardar tiempo al pulsar SPACE
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SaveTime();
+        //}
     }
 
     private void UpdateClockText()
