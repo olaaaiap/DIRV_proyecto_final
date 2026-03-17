@@ -13,6 +13,8 @@ public class AceleradorVR : MonoBehaviour
     public float rotacionMin = 0f;
     public float rotacionMax = -60f; // girar hacia atrás
 
+    public Animator animator;
+
     private bool agarrado = false;
 
     void Start()
@@ -30,7 +32,17 @@ public class AceleradorVR : MonoBehaviour
 
         float velocidad = aceleracion * velocidadMax;
 
-        moto.Translate(Vector3.forward * velocidad * Time.deltaTime);
+        if(velocidad > 0)
+        {
+            animator.SetBool("Going", true);
+        }
+        else
+        {
+            animator.SetBool("Going", false);
+
+        }
+
+        //moto.Translate(Vector3.forward * velocidad * Time.deltaTime);
     }
 
     float ObtenerRotacion()
