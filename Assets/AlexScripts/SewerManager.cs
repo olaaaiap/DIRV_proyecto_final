@@ -10,19 +10,19 @@ public class SewerManager : MonoBehaviour
     private int count;
     [SerializeField] private TextMeshPro display;
 
-    [SerializeField]  List<XRPushButton> buttons;
+    [SerializeField]  List<XRLever> buttons;
 
     private void Start()
     {
-        foreach (var button in buttons) { button.onRelease.AddListener(() => Push(button)); }
+        foreach (var button in buttons) { button.onLeverActivate.AddListener(() => Push(button)); }
         UpdateText();
     }
 
-    public void Push(XRPushButton button)
+    public void Push(XRLever button)
     {
         count++;
         UpdateText();
-        button.onRelease.RemoveAllListeners();
+        button.onLeverActivate.RemoveAllListeners();
     }
 
     public void EndPush()
