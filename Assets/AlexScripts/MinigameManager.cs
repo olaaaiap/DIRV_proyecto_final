@@ -8,21 +8,13 @@ public class MinigameManager : MonoBehaviour
 {
     private bool blocked;
 
-    private List<Question> questions;
+    [SerializeField] private List<Preguntas> questions;
     private int current;
 
     [SerializeField] private TextMeshPro gameText;
 
     private void Awake()
     {
-        questions = new List<Question>()
-        {
-            new Question("¿En qué año comienza la primera temporada de Stranger Things", "1983", "1985", 0),
-            new Question("¿Cómo se llama el pueblo en el que transcurre la historia?", "Mystic Falls", "Hawkins", 1),
-            new Question("¿Cuál es el nombre del centro comercial del pueblo?", "Starcourt Mall", "Starstruck Mall", 0),
-            new Question("¿Cuál es la canción que toca Eddie Munson en el Upside Down?", "Thunderstruck", "Master of Puppets", 1),
-
-        };
 
         UpdateMinigame();
     }
