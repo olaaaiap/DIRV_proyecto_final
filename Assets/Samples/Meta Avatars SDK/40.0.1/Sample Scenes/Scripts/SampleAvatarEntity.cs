@@ -148,45 +148,46 @@ public class SampleAvatarEntity : OvrAvatarEntity
     {
 #if USING_XR_SDK
         // Ensure OvrPlatform is Initialized
-        if (OvrPlatformInit.status == OvrPlatformInitStatus.NotStarted)
-        {
-            OvrPlatformInit.InitializeOvrPlatform();
-        }
+        //if (OvrPlatformInit.status == OvrPlatformInitStatus.NotStarted)
+        //{
+        //    OvrPlatformInit.InitializeOvrPlatform();
+        //}
+        //LoadLocalAvatar();
+        //yield return null;
+        //while (OvrPlatformInit.status != OvrPlatformInitStatus.Succeeded)
+        //{
+        //    if (OvrPlatformInit.status == OvrPlatformInitStatus.Failed)
+        //    {
+        //        OvrAvatarLog.LogError($"Error initializing OvrPlatform. Falling back to local avatar", logScope);
+        //        LoadLocalAvatar();
+        //        yield break;
+        //    }
 
-        while (OvrPlatformInit.status != OvrPlatformInitStatus.Succeeded)
-        {
-            if (OvrPlatformInit.status == OvrPlatformInitStatus.Failed)
-            {
-                OvrAvatarLog.LogError($"Error initializing OvrPlatform. Falling back to local avatar", logScope);
-                LoadLocalAvatar();
-                yield break;
-            }
-
-            yield return null;
-        }
+        //    yield return null;
+        //}
 
         // user ID == 0 means we want to load logged in user avatar from CDN
-        if (_userId == 0)
-        {
-            // Get User ID
-            bool getUserIdComplete = false;
-            Users.GetLoggedInUser().OnComplete(message =>
-            {
-                if (!message.IsError)
-                {
-                    _userId = message.Data.ID;
-                }
-                else
-                {
-                    var e = message.GetError();
-                    OvrAvatarLog.LogError($"Error loading CDN avatar: {e.Message}. Falling back to local avatar", logScope);
-                }
+        //if (_userId == 0)
+        //{
+        //    // Get User ID
+        //    bool getUserIdComplete = false;
+        //    Users.GetLoggedInUser().OnComplete(message =>
+        //    {
+        //        if (!message.IsError)
+        //        {
+        //            _userId = message.Data.ID;
+        //        }
+        //        else
+        //        {
+        //            var e = message.GetError();
+        //            OvrAvatarLog.LogError($"Error loading CDN avatar: {e.Message}. Falling back to local avatar", logScope);
+        //        }
 
-                getUserIdComplete = true;
-            });
+        //        getUserIdComplete = true;
+        //    });
 
-            while (!getUserIdComplete) { yield return null; }
-        }
+        //    while (!getUserIdComplete) { yield return null; }
+        //}
 #endif
         yield return LoadUserAvatar();
     }
