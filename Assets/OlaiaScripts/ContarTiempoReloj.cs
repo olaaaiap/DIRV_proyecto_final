@@ -14,7 +14,7 @@ public class ContarTiempoReloj : MonoBehaviour
     void Start()
     {
         filePath = Application.persistentDataPath + "/times.txt";
-        StartClock();
+        //StartClock();
     }
 
     // Llama a esta función para empezar a contar
