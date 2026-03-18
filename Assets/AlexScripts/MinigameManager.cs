@@ -7,34 +7,44 @@ using UnityEngine;
 public class MinigameManager : MonoBehaviour
 {
     private bool blocked;
+    private bool chosenDiff;
+
+    private List<Preguntas> chosenQuestions;
 
     [SerializeField] private List<Preguntas> questions;
+    [SerializeField] private List<Preguntas> questionsHard;
     private int current;
 
     [SerializeField] private TextMeshPro gameText;
 
     private void Awake()
     {
-
-        UpdateMinigame();
+        ChooseDifficulty();
+        //UpdateMinigame();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.A))
-    //    {
-    //        ChooseA();
-    //    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ChooseA();
+        }
 
-    //    if (Input.GetKeyDown(KeyCode.B))
-    //    {
-    //        ChooseB();
-    //    }
-    //}
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ChooseB();
+        }
+    }
+
+    private void ChooseDifficulty()
+    {
+
+        gameText.text = "ELIGE DIFICULTAD \n \n A. FACIL \n B. DIFICIL \n";
+    }
 
     private void UpdateMinigame()
     {
-        gameText.text = questions[current].question.ToString() + "\n \n A." + questions[current].answer1.ToString() + "\n B." + questions[current].answer2.ToString() + "\n";
+        gameText.text = chosenQuestions[current].question.ToString() + "\n \n A." + chosenQuestions[current].answer1.ToString() + "\n B." + chosenQuestions[current].answer2.ToString() + "\n";
         blocked = false;
     }
 
@@ -42,7 +52,15 @@ public class MinigameManager : MonoBehaviour
     {
         if(blocked) return;
 
-        if(questions[current].correctAnswer == 0) StartCoroutine(CorrectAnswer());
+        if (!chosenDiff)
+        {
+            chosenDiff = true;
+            chosenQuestions = questions;
+            UpdateMinigame();
+            return;
+        }
+
+        if(chosenQuestions[current].correctAnswer == 0) StartCoroutine(CorrectAnswer());
         else StartCoroutine(FailAnswer());
     }
 
@@ -50,7 +68,15 @@ public class MinigameManager : MonoBehaviour
     {
         if (blocked) return;
 
-        if (questions[current].correctAnswer == 0) StartCoroutine(FailAnswer());
+        if (!chosenDiff)
+        {
+            chosenDiff = true;
+            chosenQuestions = questionsHard;
+            UpdateMinigame();
+            return;
+        }
+
+        if (chosenQuestions[current].correctAnswer == 0) StartCoroutine(FailAnswer());
         else StartCoroutine(CorrectAnswer());
 
     }
@@ -63,7 +89,9 @@ public class MinigameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         current = 0;
-        UpdateMinigame();
+        chosenDiff = false;
+        ChooseDifficulty();
+        blocked = false;
     }
 
     private IEnumerator CorrectAnswer()
@@ -71,7 +99,7 @@ public class MinigameManager : MonoBehaviour
         blocked = true;
         gameText.text = "RESPUESTA CORRECTA";
 
-        if(current == questions.Count-1)
+        if(current == chosenQuestions.Count-1)
         {
             SceneLoadingManagement.instance.LoadNextScene();
         }
@@ -82,24 +110,5 @@ public class MinigameManager : MonoBehaviour
             UpdateMinigame();
         }
            
-    }
-}
-
-[System.Serializable]
-public class Question
-{
-    public int correctAnswer;
-
-    public string question;
-
-    public string answer1;
-    public string answer2;
-
-    public Question(string question, string answer1, string answer2, int correctAnswer)
-    {
-        this.correctAnswer = correctAnswer;
-        this.question = question;
-        this.answer1 = answer1;
-        this.answer2 = answer2;
     }
 }
