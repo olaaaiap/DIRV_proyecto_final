@@ -1053,6 +1053,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
   m_PrefabInstance: {fileID: 4828027487446226215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6951514514796522018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 4828027487446226215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7277802326999645147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1184,6 +1189,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 749843201366584000}
+    - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8755775012829673898}
     - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4448043301096345825}
@@ -1399,6 +1407,20 @@ MonoBehaviour:
   maxHeight: 10
   maxLevitationTime: 15
   buttonX: {fileID: -3685817364303626279, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &8755775012829673898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8806329115733545877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e03111df37f2943a3f3a0f23b24bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WristSetupController
+  wristSocket: {fileID: 6951514514796522018}
+  wristWatchPrefab: {fileID: 2971994857662170750, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
 --- !u!4 &8806329115733545878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
