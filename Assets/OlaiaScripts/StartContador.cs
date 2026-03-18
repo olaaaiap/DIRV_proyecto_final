@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 
 public class StartContador : MonoBehaviour
 {
+    [SerializeField] private XRSocketInteractor wristSocket;
+    [SerializeField] private XRGrabInteractable watch;
+    [SerializeField] private AudioSource errorAudio;
+    [SerializeField] private AudioSource okAudio;
+
     private ContarTiempoReloj contadorReloj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -14,9 +21,20 @@ public class StartContador : MonoBehaviour
 
     public void PushButton()
     {
-        if (contadorReloj != null)
+        if (contadorReloj == null || wristSocket == null) return;
+
+        if (wristSocket.interactablesSelected.Contains(watch))
         {
             contadorReloj.StartClock();
+            if(okAudio != null)
+                okAudio.Play();
         }
+        else
+        {
+            if (errorAudio != null)
+                errorAudio.Play();
+        }
+
+        
     }
 }

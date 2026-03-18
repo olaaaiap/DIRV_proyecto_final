@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvatarSdkManagerStyle2Meta
       objectReference: {fileID: 0}
+    - target: {fileID: 3887819867191740198, guid: 8d8b50752af2ea347aab6ca42fb61c76, type: 3}
+      propertyPath: _ovrLogLevel
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3887819867191740199, guid: 8d8b50752af2ea347aab6ca42fb61c76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
