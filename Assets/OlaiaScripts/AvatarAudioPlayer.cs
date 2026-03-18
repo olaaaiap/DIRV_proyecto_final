@@ -40,6 +40,7 @@ public class AvatarAudioPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter");
         if (!hasPlayed && other.CompareTag("Player"))
         {
             playerNearby = true;
