@@ -23,18 +23,18 @@ public class MinigameManager : MonoBehaviour
         //UpdateMinigame();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChooseA();
-        }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        ChooseA();
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            ChooseB();
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.B))
+    //    {
+    //        ChooseB();
+    //    }
+    //}
 
     private void ChooseDifficulty()
     {
