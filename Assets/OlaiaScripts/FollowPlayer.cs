@@ -6,12 +6,14 @@ public class FollowPlayer : MonoBehaviour
     public Transform player;
     public float followDistance = 2f;
 
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        
     }
+    
 
     public void Follow()
     {

@@ -40,7 +40,7 @@ public class AvatarAudioPlayer : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
         // Ajuste de 90 grados en Y
-        Quaternion offset = Quaternion.Euler(0, 180f, 0); // cambia a -90f si va al otro lado
+        Quaternion offset = Quaternion.Euler(0, 0f, 0);
         targetRotation *= offset;
 
         transform.rotation = Quaternion.Slerp(
