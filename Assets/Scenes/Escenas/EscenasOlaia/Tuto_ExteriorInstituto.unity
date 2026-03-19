@@ -5785,6 +5785,7 @@ GameObject:
   - component: {fileID: 422050346}
   - component: {fileID: 422050345}
   - component: {fileID: 422050344}
+  - component: {fileID: 422050349}
   m_Layer: 0
   m_Name: Plane (5)
   m_TagString: Untagged
@@ -5968,6 +5969,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 987460628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422050349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422050343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 26f64732d9f46a64eb56fca03a0c36a5, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &426907594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40385,6 +40418,8 @@ GameObject:
   - component: {fileID: 1309021564}
   - component: {fileID: 1309021565}
   - component: {fileID: 1309021566}
+  - component: {fileID: 1309021567}
+  - component: {fileID: 1309021568}
   m_Layer: 0
   m_Name: PersonajeAvatarEntity
   m_TagString: Untagged
@@ -40622,6 +40657,43 @@ MonoBehaviour:
   player: {fileID: 1717779433}
   delayBeforeTalking: 1.5
   rotationSpeed: 3
+  followPlayer: {fileID: 1309021568}
+--- !u!195 &1309021567
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309021561}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1309021568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309021561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc956a5420b3104e8b3df2393016fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
+  player: {fileID: 1663483550}
+  followDistance: 2
 --- !u!1001 &1309494736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44697,6 +44769,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
+--- !u!4 &1663483550 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7917674758326848202, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1663483548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1663797394
 PrefabInstance:
   m_ObjectHideFlags: 0

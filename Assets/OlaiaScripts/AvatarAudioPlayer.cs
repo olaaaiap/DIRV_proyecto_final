@@ -10,12 +10,28 @@ public class AvatarAudioPlayer : MonoBehaviour
 
     private bool hasPlayed = false;
     private bool playerNearby = false;
+    private bool follow = false;
+
+    public FollowPlayer followPlayer;
+
 
     void Update()
     {
         if (playerNearby)
         {
             LookAtPlayer();
+        }
+        if (follow) 
+        {
+            if (followPlayer != null)
+            {
+                followPlayer.Follow();
+
+            }
+            else
+            {
+                Debug.LogWarning("FollowPlayer component not assigned in AvatarAudioPlayer.");
+            }
         }
     }
 
@@ -43,6 +59,7 @@ public class AvatarAudioPlayer : MonoBehaviour
         Debug.Log("OnTriggerEnter");
         if (!hasPlayed && other.CompareTag("Player"))
         {
+            follow = true;
             playerNearby = true;
             player = other.transform;
             StartCoroutine(StartTalking());
@@ -56,5 +73,9 @@ public class AvatarAudioPlayer : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeTalking);
 
         audioSource.Play();
+
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+        follow = false;
     }
 }
