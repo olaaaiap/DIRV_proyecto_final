@@ -27,6 +27,7 @@ public class AceleradorVR : MonoBehaviour
     {
         if (agarrado)
         {
+            animator.SetBool("Going", true);
             animator.speed = 1f;
         }
         else
