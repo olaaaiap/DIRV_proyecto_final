@@ -24,8 +24,8 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
         linkedScenes = new()
         {
             {"Tuto_ExteriorInstituto", "BañosInsti" },
-            {"BañosInsti", "BañosInsti Upside Down" },
-            {"BañosInsti Upside Down", "CasaWill2" },
+            {"BañosInsti", "BañosInsti_Upside_Down" },
+            {"BañosInsti_Upside_Down", "CasaWill2" },
             {"CasaWill2", "Bosque" },
             {"Bosque", "Arcade" },
             {"Arcade", "SotanoArcade"},
