@@ -41,8 +41,6 @@ public class AceleradorVR : MonoBehaviour
             animator.SetBool("Going", false);
 
         }
-
-        //moto.Translate(Vector3.forward * velocidad * Time.deltaTime);
     }
 
     float ObtenerRotacion()
