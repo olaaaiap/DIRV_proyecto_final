@@ -51446,6 +51446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "RelojMu\xF1eca"
       objectReference: {fileID: 0}
+    - target: {fileID: 3091087446021951634, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 11400000, guid: f8ddc27df5521e4468cf6e6413e510d2, type: 2}
     - target: {fileID: 3786352858314763932, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
       propertyPath: m_Enabled
       value: 0
