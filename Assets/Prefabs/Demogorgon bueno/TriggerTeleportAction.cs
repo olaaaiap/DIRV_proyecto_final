@@ -50,6 +50,16 @@ public class TriggerTeleportAction : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        SceneLoadingManagement.instance.LoadNextScene();
+        if (SceneLoadingManagement.instance != null)
+        {
+            SceneLoadingManagement.instance.Finish();
+        }
+        else
+        {
+            Debug.LogError("SceneLoadingManagement no existe en la escena");
+
+            // OPCIONAL: fallback para probar en build
+            //Application.Quit();
+        }
     }
 }
