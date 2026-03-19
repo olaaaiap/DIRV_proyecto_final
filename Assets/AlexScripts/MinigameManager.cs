@@ -20,21 +20,14 @@ public class MinigameManager : MonoBehaviour
     private void Awake()
     {
         ChooseDifficulty();
-        //UpdateMinigame();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.A))
-    //    {
-    //        ChooseA();
-    //    }
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.A)) { ChooseA(); }
 
-    //    if (Input.GetKeyDown(KeyCode.B))
-    //    {
-    //        ChooseB();
-    //    }
-    //}
+        if (Input.GetKeyUp(KeyCode.B)) { ChooseB(); }
+    }
 
     private void ChooseDifficulty()
     {

@@ -5075,7 +5075,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a23fd0485e1072345b56110b56443a4e, type: 2}
   - {fileID: 11400000, guid: 46f34d360fc404c46aefa818b998cc2c, type: 2}
   - {fileID: 11400000, guid: 6e2c145a0451f794cbf16c61b88fae15, type: 2}
-  questionsHard: []
+  questionsHard:
+  - {fileID: 11400000, guid: d350d6777218a5a4bbb1685900a933a0, type: 2}
+  - {fileID: 11400000, guid: 0ccae617507aca8489a6ab251d8c1e63, type: 2}
+  - {fileID: 11400000, guid: cba01abd24437c941b6e3b85db3e1089, type: 2}
+  - {fileID: 11400000, guid: 079d77f2abf16c2429f51b9694ce1f74, type: 2}
   gameText: {fileID: 1154223465}
 --- !u!1001 &1315983010
 PrefabInstance:

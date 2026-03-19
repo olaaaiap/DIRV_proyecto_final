@@ -20,7 +20,6 @@ public class SewerManager : MonoBehaviour
 
     public void Push(LeverActivator button)
     {
-        print("HOLAA");
         count++;
         UpdateText();
     }

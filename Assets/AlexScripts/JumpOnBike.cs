@@ -10,12 +10,6 @@ public class JumpOnBike : MonoBehaviour
 
     public CharacterController characterController;
 
-    private void Start()
-    {
-
-       // StartCoroutine(MountPlayer());
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,10 +26,6 @@ public class JumpOnBike : MonoBehaviour
     {
         characterController.enabled = false;
         yield return new WaitForSeconds(.1f);
-
-        //player.transform.parent = bici.transform;
-        //player.transform.localPosition = new Vector3(0.18f, -0.4f, -0f);
-        //player.transform.localRotation = Quaternion.Euler(new Vector3(0f, 270f, 0f));
 
         player.SetActive(false);
         player2.SetActive(true);
