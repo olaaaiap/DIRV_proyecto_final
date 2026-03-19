@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f161ffc47c7fccd4fa3196f7976480a2, type: 3}
   m_Name: GameTimer
   m_EditorClassIdentifier: Assembly-CSharp::GameTimerSO
-  elapsedTime: 0
-  isRunning: 0
+  elapsedTime: 112.97068
+  isRunning: 1

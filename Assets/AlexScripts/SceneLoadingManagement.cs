@@ -50,6 +50,7 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
     {
         fade.DOFade(1f, 1f).OnComplete(() =>
         {
+            ContarTiempoReloj.instance.SaveTime();
             Application.Quit();
         });
     }
