@@ -30,7 +30,8 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
             {"Bosque", "Arcade" },
             {"Arcade", "SotanoArcade"},
             {"SotanoArcade", "Hangar" },
-            {"Hangar", "CastilloByers" }
+            {"Hangar", "CastilloByers" },
+            {"CastilloByers", "Tuto_ExteriorInstituto" }
         };
     }
 
