@@ -10,20 +10,19 @@ public class SewerManager : MonoBehaviour
     private int count;
     [SerializeField] private TextMeshPro display;
 
-    [SerializeField]  List<XRLever> buttons;
+    [SerializeField]  List<LeverActivator> buttons;
 
     private void Start()
     {
-        foreach (var button in buttons) { button.activated.AddListener((x) => Push(button)); }
+        foreach (var button in buttons) { button.OnActivated += () => Push(button); }
         UpdateText();
     }
 
-    public void Push(XRLever button)
+    public void Push(LeverActivator button)
     {
         print("HOLAA");
         count++;
         UpdateText();
-        button.onLeverActivate.RemoveAllListeners();
     }
 
     public void EndPush()
