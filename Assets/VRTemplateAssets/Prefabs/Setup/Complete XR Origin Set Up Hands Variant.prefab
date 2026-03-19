@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2671609884960151761
 Transform:
   m_ObjectHideFlags: 0
@@ -436,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 3887819867191740197, guid: 8d8b50752af2ea347aab6ca42fb61c76, type: 3}
       propertyPath: m_Name
       value: AvatarSdkManagerStyle2Meta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887819867191740197, guid: 8d8b50752af2ea347aab6ca42fb61c76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3887819867191740198, guid: 8d8b50752af2ea347aab6ca42fb61c76, type: 3}
       propertyPath: _ovrLogLevel
@@ -1486,7 +1490,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WristSetupController
   wristSocketController: {fileID: 6951514514796522018}
-  wristSocketHand: {fileID: 0}
   wristWatchPrefab: {fileID: 2971994857662170750, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
   leftControllerAttach: {fileID: 7917674758919744168}
   leftHandAttach: {fileID: 3849287962258532554}
