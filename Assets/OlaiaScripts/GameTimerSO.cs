@@ -1,14 +1,17 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "GameTimer", menuName = "VR/Game Timer")]
 public class GameTimerSO : ScriptableObject
 {
+    public Action OnTimerUpdated;
     public float elapsedTime = 0f; // Tiempo en segundos
     public bool isRunning = false; // ¿Está contando?
 
     // Reinicia el timer
     public void ResetTimer()
     {
+        Debug.Log("resetTimer");
         elapsedTime = 0f;
         isRunning = false;
     }
@@ -19,6 +22,7 @@ public class GameTimerSO : ScriptableObject
         if (isRunning)
         {
             elapsedTime += deltaTime;
+            OnTimerUpdated?.Invoke();
         }
     }
 }

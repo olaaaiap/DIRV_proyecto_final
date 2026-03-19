@@ -15,22 +15,22 @@ public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
     void Start()
     {
         filePath = Application.persistentDataPath + "/times.txt";
-        //timeManager = FindFirstObjectByType<TimeManager>();
+        timeManager = FindFirstObjectByType<TimeManager>();
         DontDestroyOnLoad(this);
         gameTimer.isRunning = true;
         //StartClock();
     }
 
-    // Llama a esta función para empezar a contar
+    // Llama a esta funciÃ³n para empezar a contar
     public void StartClock()
     {
         elapsedTime = 0f;
-        isRunning = true;   
+        isRunning = true;
         if (timeManager != null)
             timeManager.StartTimer();
     }
 
-    // Llama a esta función si quieres pausar el reloj
+    // Llama a esta funciÃ³n si quieres pausar el reloj
     public void StopClock()
     {
         isRunning = false;
@@ -38,7 +38,7 @@ public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
             timeManager.StopTimer();
     }
 
-    // Llama a esta función para reiniciar y detener
+    // Llama a esta funciÃ³n para reiniciar y detener
     public void ResetClock()
     {
         elapsedTime = 0f;
@@ -50,7 +50,7 @@ public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
     {
         if (isRunning)
         {
-            // Suma el tiempo transcurrido desde el último frame
+            // Suma el tiempo transcurrido desde el Ãºltimo frame
             elapsedTime += Time.deltaTime;
             UpdateClockText();
         }
@@ -64,7 +64,7 @@ public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
 
     public string UpdateClockText()
     {
-        
+
         int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);
         int minutes = Mathf.FloorToInt((gameTimer.elapsedTime % 3600f) / 60f);
         int seconds = Mathf.FloorToInt(gameTimer.elapsedTime % 60f);
