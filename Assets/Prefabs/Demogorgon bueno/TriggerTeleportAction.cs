@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TriggerTeleportAction : MonoBehaviour
@@ -36,5 +37,15 @@ public class TriggerTeleportAction : MonoBehaviour
             audioSource.Play();
         }
         activated = true;
+
+        changeScene();
+
+    }
+
+    private IEnumerator changeScene()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneLoadingManagement.instance.LoadNextScene();
     }
 }
