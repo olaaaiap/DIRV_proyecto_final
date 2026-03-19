@@ -9,6 +9,8 @@ public class TriggerTeleportAction : MonoBehaviour
     private Animator animator;
     private bool activated = false;
 
+    public float waitTime = 2f;
+
     void Start()
     {
         if (character != null)
@@ -38,14 +40,16 @@ public class TriggerTeleportAction : MonoBehaviour
         }
         activated = true;
 
-       changeScene();
+        //changeScene();
+
+        StartCoroutine(changeScene());
 
     }
 
     private IEnumerator changeScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
 
-        SceneLoadingManagement.instance.Finish();
+        SceneLoadingManagement.instance.LoadNextScene();
     }
 }
