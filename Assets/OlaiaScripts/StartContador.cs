@@ -9,6 +9,7 @@ public class StartContador : MonoBehaviour
     [SerializeField] private XRGrabInteractable watch;
     [SerializeField] private AudioSource errorAudio;
     [SerializeField] private AudioSource okAudio;
+    [SerializeField] private GameObject tablas;
 
     private ContarTiempoReloj contadorReloj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +27,9 @@ public class StartContador : MonoBehaviour
         if (wristSocket.interactablesSelected.Contains(watch))
         {
             contadorReloj.StartClock();
-            if(okAudio != null)
+            if (tablas != null)
+                tablas.SetActive(false);
+            if (okAudio != null)
                 okAudio.Play();
         }
         else

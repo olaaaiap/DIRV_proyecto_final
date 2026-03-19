@@ -1088,6 +1088,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+--- !u!4 &408682423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 408682422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &441087506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4807,7 +4812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597fac9c1cd84c944ae935df39ed179f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBackOnApproach
-  player: {fileID: 1662221572}
+  player: {fileID: 408682423}
   triggerDistance: 2
   moveOffset: {x: 0, y: 0, z: 5}
   moveSpeed: 3
