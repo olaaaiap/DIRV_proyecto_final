@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Escenas/EscenasOlaia/OLD_Tuto_ExteriorInstitutoOLD.unity
     guid: 3d299b70890e0334e97aa8de89a5720c
   - enabled: 1
@@ -32,6 +32,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas/EscenasAlex/VecnaBossfight.unity
     guid: 0f5e651569d44094c84ebaf9c2fa4eaf
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasOlaia/CasaWill2.unity
+    guid: fbae6457bbf199744aab5e31846b947c
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasOlaia/Tuto_ExteriorInstituto.unity
+    guid: 7aa6aed54844ed042a3ce81c1c8fa14c
+  - enabled: 1
+    path: "Assets/Scenes/Escenas/EscenasAlvaro/Ba\xF1osInsti_Upside_Down.unity"
+    guid: 902582063856bf14f9e49c7a45ce4626
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlex/Bosque Alex.unity
+    guid: 8afbe3f3969c3f24e855a47af20e5027
+  - enabled: 1
+    path: Assets/Scenes/Escenas/EscenasAlex/SotanoArcade.unity
+    guid: 7f412bc71202aa1498debcfc068d97cc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
