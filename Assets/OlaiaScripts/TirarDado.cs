@@ -126,7 +126,6 @@ public class TirarDado : MonoBehaviour
 
         if (pointLight != null)
         {
-            Debug.Log("Activando luz puntual");
             pointLight.enabled = true;
         }
     }

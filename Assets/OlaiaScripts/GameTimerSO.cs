@@ -9,7 +9,6 @@ public class GameTimerSO : ScriptableObject
     // Reinicia el timer
     public void ResetTimer()
     {
-        Debug.Log("Timer reset");
         elapsedTime = 0f;
         isRunning = false;
     }

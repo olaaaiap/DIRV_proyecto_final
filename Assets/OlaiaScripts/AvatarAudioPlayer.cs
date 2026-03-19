@@ -28,10 +28,7 @@ public class AvatarAudioPlayer : MonoBehaviour
                 followPlayer.Follow();
 
             }
-            else
-            {
-                Debug.LogWarning("FollowPlayer component not assigned in AvatarAudioPlayer.");
-            }
+           
         }
     }
 
@@ -56,7 +53,6 @@ public class AvatarAudioPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter");
         if (!hasPlayed && other.CompareTag("Player"))
         {
             follow = true;
