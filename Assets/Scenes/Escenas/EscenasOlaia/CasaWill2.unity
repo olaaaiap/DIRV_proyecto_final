@@ -36565,6 +36565,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+--- !u!4 &1203696449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1203696448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1205852642
 GameObject:
   m_ObjectHideFlags: 0
@@ -52840,7 +52845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa66213dd134e1c4aa9544e64e8769f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TirarDado
-  player: {fileID: 0}
+  player: {fileID: 1203696449}
   maxDistance: 5
   torqueForce: 5
   respawnOffset: {x: 0, y: 0, z: 2}
