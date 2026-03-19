@@ -14,12 +14,13 @@ public class SewerManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var button in buttons) { button.onLeverActivate.AddListener(() => Push(button)); }
+        foreach (var button in buttons) { button.activated.AddListener((x) => Push(button)); }
         UpdateText();
     }
 
     public void Push(XRLever button)
     {
+        print("HOLAA");
         count++;
         UpdateText();
         button.onLeverActivate.RemoveAllListeners();
