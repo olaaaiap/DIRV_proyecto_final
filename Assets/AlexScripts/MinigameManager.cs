@@ -22,12 +22,12 @@ public class MinigameManager : MonoBehaviour
         ChooseDifficulty();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.A)) { ChooseA(); }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyUp(KeyCode.A)) { ChooseA(); }
 
-        if (Input.GetKeyUp(KeyCode.B)) { ChooseB(); }
-    }
+    //    if (Input.GetKeyUp(KeyCode.B)) { ChooseB(); }
+    //}
 
     private void ChooseDifficulty()
     {
