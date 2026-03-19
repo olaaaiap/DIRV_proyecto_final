@@ -5,7 +5,6 @@ public class WristSetupController : MonoBehaviour
 {
     [Header("Prefabs / Objetos")]
     public GameObject wristSocketController;   // El socket en la muñeca
-    public GameObject wristSocketHand;   // El socket en la muñeca
     public GameObject wristWatchPrefab; // Prefab del reloj
 
     private GameObject instantiatedWatch;
@@ -51,17 +50,7 @@ public class WristSetupController : MonoBehaviour
             Destroy(instantiatedWatch);
         }
 
-        if (IsHandActive())
-        {
-            
-
-            //if (wristWatchPrefab != null && wristSocketHand != null)
-            //{
-            //    Debug.Log("añadiendo en mano");
-            //    instantiatedWatch = Instantiate(wristWatchPrefab, wristSocketHand.transform);
-            //}
-        }
-        else
+        if (!IsHandActive())
         {
             if (leftControllerAttach != null)
             {
