@@ -9,61 +9,62 @@ public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
 
     private TimeManager timeManager;
 
-    private bool haEmpezado = false;
+    private float elapsedTime = 0f;
+    private bool isRunning = false;
 
     void Start()
     {
         filePath = Application.persistentDataPath + "/times.txt";
-        //timeManager = FindFirstObjectByType<TimeManager>();
+        timeManager = FindFirstObjectByType<TimeManager>();
         DontDestroyOnLoad(this);
         gameTimer.isRunning = true;
         //StartClock();
     }
 
-    void OnEnable()
-    {
-        if (gameTimer != null)
-            gameTimer.OnTimerUpdated += UpdateClockText;
-    }
-
-    void OnDisable()
-    {
-        if (gameTimer != null)
-            gameTimer.OnTimerUpdated -= UpdateClockText;
-    }
-
-    // Llama a esta funci�n para empezar a contar
+    // Llama a esta función para empezar a contar
     public void StartClock()
     {
-        haEmpezado = true; 
+        elapsedTime = 0f;
+        isRunning = true;
         if (timeManager != null)
             timeManager.StartTimer();
     }
 
-    // Llama a esta funci�n si quieres pausar el reloj
+    // Llama a esta función si quieres pausar el reloj
     public void StopClock()
     {
+        isRunning = false;
         if (timeManager != null)
             timeManager.StopTimer();
     }
 
-    // Llama a esta funci�n para reiniciar y detener
+    // Llama a esta función para reiniciar y detener
     public void ResetClock()
     {
+        elapsedTime = 0f;
+        isRunning = false;
         UpdateClockText();
     }
 
+    private void Update()
+    {
+        if (isRunning)
+        {
+            // Suma el tiempo transcurrido desde el último frame
+            elapsedTime += Time.deltaTime;
+            UpdateClockText();
+        }
+
+        //// Guardar tiempo al pulsar SPACE
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SaveTime();
+        //}
+    }
 
     public string UpdateClockText()
     {
-            int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);
-            int minutes = Mathf.FloorToInt((gameTimer.elapsedTime % 3600f) / 60f);
-            int seconds = Mathf.FloorToInt(gameTimer.elapsedTime % 60f);
-            // Formato HH:MM:SS
-            clockText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
 
-        
-        
         int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);
         int minutes = Mathf.FloorToInt((gameTimer.elapsedTime % 3600f) / 60f);
         int seconds = Mathf.FloorToInt(gameTimer.elapsedTime % 60f);
