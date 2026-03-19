@@ -36,20 +36,22 @@ public class AceleradorVR : MonoBehaviour
         {
             animator.SetBool("Going", true);
         }
+
+        if(velocidad > 0)
+        {
+            animator.speed = 1f;
+        }
         else
         {
-            animator.SetBool("Going", false);
+            animator.speed = 0f;
 
         }
-
-        //moto.Translate(Vector3.forward * velocidad * Time.deltaTime);
     }
 
     float ObtenerRotacion()
     {
         float rotZ = controlador.localEulerAngles.z;
 
-        // Convertir de 0-360 a -180 a 180
         if (rotZ > 180) rotZ -= 360;
 
         return rotZ;
