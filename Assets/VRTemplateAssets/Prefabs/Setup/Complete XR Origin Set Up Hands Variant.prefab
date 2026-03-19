@@ -1086,8 +1086,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
       propertyPath: m_Name
-      value: SocketReloj
+      value: SocketRelojController
       objectReference: {fileID: 0}
+    - target: {fileID: 2870737422147011415, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 7818395669387291517}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1101,6 +1105,11 @@ Transform:
 --- !u!1 &6951514514796522018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 4828027487446226215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7818395669387291517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3422766620974906970, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
   m_PrefabInstance: {fileID: 4828027487446226215}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7277802326999645147
@@ -1185,7 +1194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553616120026445523, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6018838917197495621, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1295,6 +1304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b29b6c6428c984a8a73ffc2d58063b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3849287962258532554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5878492368827077393, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 7277802326999645147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!143 &4295892835532738850 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 6873022368256633593, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -1471,8 +1485,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e03111df37f2943a3f3a0f23b24bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WristSetupController
-  wristSocket: {fileID: 6951514514796522018}
+  wristSocketController: {fileID: 6951514514796522018}
+  wristSocketHand: {fileID: 0}
   wristWatchPrefab: {fileID: 2971994857662170750, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
+  leftControllerAttach: {fileID: 7917674758919744168}
+  leftHandAttach: {fileID: 3849287962258532554}
 --- !u!4 &8806329115733545878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}

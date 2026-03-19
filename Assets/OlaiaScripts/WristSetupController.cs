@@ -4,29 +4,69 @@ using UnityEngine.SceneManagement;
 public class WristSetupController : MonoBehaviour
 {
     [Header("Prefabs / Objetos")]
-    public GameObject wristSocket;   // El socket en la muñeca
+    public GameObject wristSocketController;   // El socket en la muñeca
     public GameObject wristWatchPrefab; // Prefab del reloj
 
     private GameObject instantiatedWatch;
 
+    public Transform leftControllerAttach;
+    public Transform leftHandAttach;
+    private bool wasHandActive;
+
     void Start()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
+        wasHandActive = IsHandActive();
+        HandleWatch();
+    }
 
-        if (sceneName != "Tuto_ExteriorInstituto")
+    void Update()
+    {
+        bool isHandActive = IsHandActive();
+
+        // Detectar cambio de estado (mano <-> mando)
+        if (isHandActive != wasHandActive)
         {
-            // Instanciamos el reloj y lo hacemos hijo del socket
-            if (wristWatchPrefab != null && wristSocket != null)
-            {
-                instantiatedWatch = Instantiate(wristWatchPrefab, wristSocket.transform);
-                // Ajustar posición y rotación relativa al socket
-                instantiatedWatch.transform.localPosition = Vector3.zero;
-                instantiatedWatch.transform.localRotation = Quaternion.identity;
-            }
-        }
-        else
-        {
-            // En tutorial no hacemos nada; el socket queda vacío
+            wasHandActive = isHandActive;
+            HandleWatch();
         }
     }
+
+    bool IsHandActive()
+    {
+        return leftHandAttach != null && leftHandAttach.gameObject.activeInHierarchy;
+    }
+
+    void HandleWatch()
+    {
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Tuto_ExteriorInstituto")
+            return;
+
+        // Eliminar reloj anterior si existe
+        if (instantiatedWatch != null)
+        {
+            Destroy(instantiatedWatch);
+        }
+
+        if (!IsHandActive())
+        {
+            if (leftControllerAttach != null)
+            {
+                if (wristWatchPrefab != null && wristSocketController != null)
+                {
+                    instantiatedWatch = Instantiate(wristWatchPrefab, wristSocketController.transform);
+                }
+            }
+        }
+
+        if (instantiatedWatch != null)
+        {
+            instantiatedWatch.transform.localPosition = Vector3.zero;
+            instantiatedWatch.transform.localRotation = Quaternion.identity;
+
+        }
+    
+}
 }

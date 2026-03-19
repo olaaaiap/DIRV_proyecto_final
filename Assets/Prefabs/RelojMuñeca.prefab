@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ff11fd8ccd94b4090c2578affd66e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContarTiempoReloj
+  gameTimer: {fileID: 11400000, guid: f8ddc27df5521e4468cf6e6413e510d2, type: 2}
   clockText: {fileID: 8433590333531840405}
 --- !u!54 &4716306420307446320
 Rigidbody:
@@ -573,7 +574,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
