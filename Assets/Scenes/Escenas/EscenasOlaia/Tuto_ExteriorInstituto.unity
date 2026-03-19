@@ -40451,6 +40451,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7299097548363301215, guid: 10d7799affb1e454398b9f49f92e7bb2, type: 3}
   m_PrefabInstance: {fileID: 1282116877}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1282332430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282332431}
+  - component: {fileID: 1282332432}
+  m_Layer: 0
+  m_Name: ContarTiempoReloj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282332431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282332430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.3064, y: -0, z: -28.08468}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282332432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282332430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ff11fd8ccd94b4090c2578affd66e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContarTiempoReloj
+  gameTimer: {fileID: 11400000, guid: f8ddc27df5521e4468cf6e6413e510d2, type: 2}
+  clockText: {fileID: 0}
 --- !u!1001 &1283609456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52072,3 +52118,4 @@ SceneRoots:
   - {fileID: 1682657093}
   - {fileID: 1662199016}
   - {fileID: 967750090}
+  - {fileID: 1282332431}

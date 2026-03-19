@@ -15,7 +15,7 @@ public class AceleradorVR : MonoBehaviour
 
     public Animator animator;
 
-    private bool agarrado = false;
+    public bool agarrado = false;
 
     void Start()
     {
@@ -25,19 +25,7 @@ public class AceleradorVR : MonoBehaviour
 
     void Update()
     {
-        if (!agarrado) return;
-
-        float rotZ = ObtenerRotacion();
-        float aceleracion = ObtenerAceleracion(rotZ);
-
-        float velocidad = aceleracion * velocidadMax;
-
-        if(velocidad > 0)
-        {
-            animator.SetBool("Going", true);
-        }
-
-        if(velocidad > 0)
+        if (agarrado)
         {
             animator.speed = 1f;
         }
@@ -46,6 +34,20 @@ public class AceleradorVR : MonoBehaviour
             animator.speed = 0f;
 
         }
+
+        //if (!agarrado) return;
+
+        //float rotZ = ObtenerRotacion();
+        //float aceleracion = ObtenerAceleracion(rotZ);
+
+        //float velocidad = aceleracion * velocidadMax;
+
+        //if(velocidad > 0)
+        //{
+        //    animator.SetBool("Going", true);
+        //}
+
+        
     }
 
     float ObtenerRotacion()

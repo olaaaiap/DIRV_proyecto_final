@@ -2,11 +2,10 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 
-public class ContarTiempoReloj : MonoBehaviour
+public class ContarTiempoReloj : Singleton<ContarTiempoReloj>
 {
     private string filePath;
     public GameTimerSO gameTimer;
-    public TextMeshPro clockText;
 
     private TimeManager timeManager;
 
@@ -15,7 +14,9 @@ public class ContarTiempoReloj : MonoBehaviour
     void Start()
     {
         filePath = Application.persistentDataPath + "/times.txt";
-        timeManager = FindFirstObjectByType<TimeManager>();
+        //timeManager = FindFirstObjectByType<TimeManager>();
+        DontDestroyOnLoad(this);
+        gameTimer.isRunning = true;
         //StartClock();
     }
 
@@ -31,7 +32,7 @@ public class ContarTiempoReloj : MonoBehaviour
             gameTimer.OnTimerUpdated -= UpdateClockText;
     }
 
-    // Llama a esta función para empezar a contar
+    // Llama a esta funciï¿½n para empezar a contar
     public void StartClock()
     {
         haEmpezado = true; 
@@ -39,21 +40,21 @@ public class ContarTiempoReloj : MonoBehaviour
             timeManager.StartTimer();
     }
 
-    // Llama a esta función si quieres pausar el reloj
+    // Llama a esta funciï¿½n si quieres pausar el reloj
     public void StopClock()
     {
         if (timeManager != null)
             timeManager.StopTimer();
     }
 
-    // Llama a esta función para reiniciar y detener
+    // Llama a esta funciï¿½n para reiniciar y detener
     public void ResetClock()
     {
         UpdateClockText();
     }
 
 
-    public void UpdateClockText()
+    public string UpdateClockText()
     {
             int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);
             int minutes = Mathf.FloorToInt((gameTimer.elapsedTime % 3600f) / 60f);
@@ -63,9 +64,15 @@ public class ContarTiempoReloj : MonoBehaviour
 
         
         
+        int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);
+        int minutes = Mathf.FloorToInt((gameTimer.elapsedTime % 3600f) / 60f);
+        int seconds = Mathf.FloorToInt(gameTimer.elapsedTime % 60f);
+
+        // Formato HH:MM:SS
+        return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
     }
 
-    void SaveTime()
+    public void SaveTime()
     {
 
         int hours = Mathf.FloorToInt(gameTimer.elapsedTime / 3600f);

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5498163358678841944}
   - component: {fileID: 7732895057842660919}
   - component: {fileID: 525903742130750497}
-  - component: {fileID: 3091087446021951634}
   - component: {fileID: 4716306420307446320}
   - component: {fileID: 418348071837454129}
   - component: {fileID: 758131405108094805}
+  - component: {fileID: 7712351857242535755}
   m_Layer: 0
   m_Name: "RelojMu\xF1eca"
   m_TagString: Untagged
@@ -94,20 +94,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3091087446021951634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2971994857662170750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ff11fd8ccd94b4090c2578affd66e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContarTiempoReloj
-  gameTimer: {fileID: 11400000, guid: f8ddc27df5521e4468cf6e6413e510d2, type: 2}
-  clockText: {fileID: 8433590333531840405}
 --- !u!54 &4716306420307446320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -286,6 +272,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3600808651934523017, guid: 6a578a883b9cf914990fa08de501e0d3, type: 3}
+--- !u!114 &7712351857242535755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971994857662170750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78696487b81dd34bbbd873d4a23afcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActualizarTiempoReloj
+  clockText: {fileID: 8433590333531840405}
 --- !u!1 &3136882840888568391
 GameObject:
   m_ObjectHideFlags: 0
