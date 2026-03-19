@@ -45,5 +45,13 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
         }))
             .Append(fade.DOFade(0f, 1f));
     }
+
+    public void Finish()
+    {
+        fade.DOFade(1f, 1f).OnComplete(() =>
+        {
+            Application.Quit();
+        });
+    }
 }
 

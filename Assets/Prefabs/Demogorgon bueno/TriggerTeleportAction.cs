@@ -38,7 +38,7 @@ public class TriggerTeleportAction : MonoBehaviour
         }
         activated = true;
 
-        changeScene();
+       changeScene();
 
     }
 
@@ -46,6 +46,6 @@ public class TriggerTeleportAction : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        SceneLoadingManagement.instance.LoadNextScene();
+        SceneLoadingManagement.instance.Finish();
     }
 }
