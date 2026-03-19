@@ -7,7 +7,6 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         // Actualiza el tiempo cada frame
-        Debug.Log(gameTimer.isRunning);
         if (gameTimer.isRunning)
             gameTimer.UpdateTimer(Time.deltaTime);
     }
@@ -20,7 +19,6 @@ public class TimeManager : MonoBehaviour
             gameTimer.ResetTimer();
             inicializado = true;
         }
-        Debug.Log("Starting timer...");
         gameTimer.isRunning = true;
     }
 

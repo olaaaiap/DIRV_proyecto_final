@@ -421,6 +421,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4182173016428331247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3013070361046088631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2190069929221440156}
+    m_Modifications:
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.019899964
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.025600001
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3734373
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.34391522
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6228089
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.59529495
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -86.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 102.489
+      objectReference: {fileID: 0}
+    - target: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 16.522
+      objectReference: {fileID: 0}
+    - target: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_Name
+      value: SocketRelojHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870737422147011415, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 455021466722567661}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4193844546709234931}
+  m_SourcePrefab: {fileID: 100100000, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+--- !u!4 &455021466722567661 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3422766620974906970, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 3013070361046088631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &768065437443163314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 3013070361046088631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4193844546709234931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768065437443163314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146cf00a8ff4f8442b598cc6d9765816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  attachTransform: {fileID: 455021466722567661}
+  leftControllerAttach: {fileID: 7917674758919744168}
+  leftHandAttach: {fileID: 3849287962258532554}
+--- !u!4 &2936558442386107903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 76653414363289160, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 3013070361046088631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3086809188066485816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,8 +1180,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
       propertyPath: m_Name
-      value: SocketReloj
+      value: SocketRelojController
       objectReference: {fileID: 0}
+    - target: {fileID: 2870737422147011415, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 7818395669387291517}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1101,6 +1199,11 @@ Transform:
 --- !u!1 &6951514514796522018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2555833425943002885, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
+  m_PrefabInstance: {fileID: 4828027487446226215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7818395669387291517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3422766620974906970, guid: f5d0aef83d7b43947a13a65cb8de0580, type: 3}
   m_PrefabInstance: {fileID: 4828027487446226215}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7277802326999645147
@@ -1185,7 +1288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553616120026445523, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6018838917197495621, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1237,6 +1340,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184242222895506, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1632400500797467239}
+    - targetCorrespondingSourceObject: {fileID: 8834728037239060807, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2936558442386107903}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
@@ -1295,6 +1401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b29b6c6428c984a8a73ffc2d58063b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3849287962258532554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5878492368827077393, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 7277802326999645147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!143 &4295892835532738850 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 6873022368256633593, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -1471,8 +1582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e03111df37f2943a3f3a0f23b24bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WristSetupController
-  wristSocket: {fileID: 6951514514796522018}
+  wristSocketController: {fileID: 6951514514796522018}
+  wristSocketHand: {fileID: 768065437443163314}
   wristWatchPrefab: {fileID: 2971994857662170750, guid: 45631e5feb3b8c446aa0da63fdb1fb6d, type: 3}
+  leftControllerAttach: {fileID: 7917674758919744168}
+  leftHandAttach: {fileID: 3849287962258532554}
 --- !u!4 &8806329115733545878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
