@@ -25,8 +25,8 @@ public class SceneLoadingManagement : Singleton<SceneLoadingManagement>
         {
             {"Tuto_ExteriorInstituto", "BañosInsti" },
             {"BañosInsti", "BañosInsti_Upside_Down" },
-            {"BañosInsti_Upside_Down", "CasaWill2" },
-            {"CasaWill2", "Bosque" },
+            {"BañosInsti_Upside_Down", "Bosque" },
+            //{"CasaWill2", "Bosque" },
             {"Bosque", "Arcade" },
             {"Arcade", "SotanoArcade"},
             {"SotanoArcade", "Hangar" },
