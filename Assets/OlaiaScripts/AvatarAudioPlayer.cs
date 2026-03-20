@@ -3,75 +3,69 @@ using UnityEngine;
 
 public class AvatarAudioPlayer : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public Transform player;
-    public float delayBeforeTalking = 1.5f;
-    public float rotationSpeed = 3f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private Transform player;
+    [SerializeField] private float esperaAntesDeHablar = 1.5f;
+    [SerializeField] private float velocidadRotacion = 3f;
+    [SerializeField] private PerseguirPlayer seguirPlayer;
 
-    private bool hasPlayed = false;
-    private bool playerNearby = false;
-    private bool follow = false;
-
-    public FollowPlayer followPlayer;
+    private bool reproducido = false;
+    private bool playerCerca = false;
+    private bool perseguir = false;
 
 
     void Update()
     {
-        if (playerNearby)
+        if (playerCerca)
         {
-            LookAtPlayer();
+            MirarPlayer();
         }
-        if (follow) 
+        if (perseguir) 
         {
-            if (followPlayer != null)
+            if (seguirPlayer != null)
             {
-                followPlayer.Follow();
+                seguirPlayer.Seguir();
 
             }
            
         }
     }
 
-    void LookAtPlayer()
+    void MirarPlayer()
     {
+        //Calcular la dirección
         Vector3 direction = player.position - transform.position;
-        direction.y = 0; // opcional: mantener la cabeza nivelada
+        direction.y = 0;
 
+        //Calcular la rotación hacia el player
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        // Ajuste de 90 grados en Y
-        Quaternion offset = Quaternion.Euler(0, 0f, 0);
-        targetRotation *= offset;
-
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            targetRotation,
-            Time.deltaTime * rotationSpeed
-        );
+        //Hacer ul lerp para suavizar la rotacion
+        transform.rotation = Quaternion.Slerp( transform.rotation, targetRotation, Time.deltaTime * velocidadRotacion);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasPlayed && other.CompareTag("Player"))
+        //Si colisiona con player y si el audio no se ha reproducido..
+        if (!reproducido && other.CompareTag("Player"))
         {
-            follow = true;
-            playerNearby = true;
+            //...perseguir player
+            perseguir = true;
+            playerCerca = true;
             player = other.transform;
-            StartCoroutine(StartTalking());
+            StartCoroutine(EmpezarHablar());
         }
     }
 
-    IEnumerator StartTalking()
+    IEnumerator EmpezarHablar()
     {
-        hasPlayed = true;
-
-        yield return new WaitForSeconds(delayBeforeTalking);
-
+        //Reproducir audio
+        reproducido = true;
+        yield return new WaitForSeconds(esperaAntesDeHablar);
         audioSource.Play();
 
         yield return new WaitForSeconds(audioSource.clip.length);
-
-        follow = false;
+        perseguir = false;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JuegoLuces : MonoBehaviour
 {
-    public Light[] lights; // Luces en la escena
+    public Light[] lights;
     public float lightDuration = 4.0f;
 
     public AudioSource errorAudio;
@@ -12,37 +12,33 @@ public class JuegoLuces : MonoBehaviour
 
     public GameObject portal;
 
-    private List<int> sequence = new List<int>();
+    private List<int> secuenciaLuces = new List<int>();
     private int currentStep = 0;
     private int correctStreak = 0;
     private bool empezado = false;
-    //private bool waitingForInput = false;
 
     void Start()
     {
         portal.SetActive(false);
-        GenerateSequence(50); // puedes cambiar tamaño
+        GenerateSequence(50);
         
     }
 
     void GenerateSequence(int length)
     {
-        sequence.Clear();
+        secuenciaLuces.Clear();
         for (int i = 0; i < length; i++)
         {
-            sequence.Add(Random.Range(0, lights.Length));
+            secuenciaLuces.Add(Random.Range(0, lights.Length));
         }
     }
 
-    IEnumerator PlaySequence()
+    IEnumerator PlaySecuencia()
     {
-        //waitingForInput = false;
-
-        for (int i = 0; i < sequence.Count; i++)
+        for (int i = 0; i < secuenciaLuces.Count; i++)
         {
-            int index = sequence[i];
-
-            TurnOffAllLights();
+            int index = secuenciaLuces[i];
+            ApagarLuces();
             lights[index].enabled = true;
 
             yield return new WaitForSeconds(lightDuration);
@@ -51,11 +47,10 @@ public class JuegoLuces : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
 
-        //waitingForInput = true;
         currentStep = 0;
     }
 
-    void TurnOffAllLights()
+    void ApagarLuces()
     {
         foreach (Light l in lights)
         {
@@ -63,19 +58,17 @@ public class JuegoLuces : MonoBehaviour
         }
     }
 
-    // Este método lo llamarán los botones
+   
     public void PressButton(string color)
     {
-        //if (!waitingForInput) return;
-
         if (!empezado)
         {
             empezado = true;
-            StartCoroutine(PlaySequence());
+            StartCoroutine(PlaySecuencia());
         }
         else
         {
-            Light currentLight = lights[sequence[currentStep]];
+            Light currentLight = lights[secuenciaLuces[currentStep]];
             ColorLuz colorScript = currentLight.GetComponentInParent<ColorLuz>();
 
             string lightColor = colorScript.color;
@@ -92,14 +85,14 @@ public class JuegoLuces : MonoBehaviour
                     return;
                 }
 
-                if (currentStep >= sequence.Count)
+                if (currentStep >= secuenciaLuces.Count)
                 {
-                    StartCoroutine(PlaySequence());
+                    StartCoroutine(PlaySecuencia());
                 }
             }
             else
             {
-                Fail();
+                Error();
             }
 
         }
@@ -114,13 +107,13 @@ public class JuegoLuces : MonoBehaviour
         return "error";
     }
 
-    void Fail()
+    void Error()
     {
         errorAudio.Play();
 
         correctStreak = 0;
         currentStep = 0;
 
-        StartCoroutine(PlaySequence());
+        StartCoroutine(PlaySecuencia());
     }
 }

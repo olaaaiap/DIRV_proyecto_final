@@ -5,10 +5,9 @@ using UnityEngine;
 public class GameTimerSO : ScriptableObject
 {
     public Action OnTimerUpdated;
-    public float elapsedTime = 0f; // Tiempo en segundos
-    public bool isRunning = false; // ¿Está contando?
+    public float elapsedTime = 0f;
+    public bool isRunning = false;
 
-    // Reinicia el timer
     public void ResetTimer()
     {
         Debug.Log("resetTimer");
@@ -16,7 +15,6 @@ public class GameTimerSO : ScriptableObject
         isRunning = false;
     }
 
-    // Actualiza el tiempo (llámalo desde un MonoBehaviour)
     public void UpdateTimer(float deltaTime)
     {
         if (isRunning)

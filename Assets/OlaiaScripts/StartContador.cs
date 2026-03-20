@@ -12,16 +12,17 @@ public class StartContador : MonoBehaviour
     [SerializeField] private GameObject tablas;
 
     private ContarTiempoReloj contadorReloj;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+
     void Awake()
     {
-        // Busca la primera instancia de ContarTiempoReloj en la escena
         contadorReloj = FindFirstObjectByType<ContarTiempoReloj>();
 
     }
 
     public void PushButton()
     {
+        //Empezar contador cuando se pulse el boton
         if (contadorReloj == null || wristSocket == null) return;
 
         if (wristSocket.interactablesSelected.Contains(watch))

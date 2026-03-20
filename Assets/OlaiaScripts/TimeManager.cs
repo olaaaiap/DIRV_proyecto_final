@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public GameTimerSO gameTimer; // Asignas aquí tu Scriptable Object
+    public GameTimerSO gameTimer; //Scriptable object
     private bool inicializado = false;
     void Update()
     {
-        // Actualiza el tiempo cada frame
+        //Actualizar tiempo del scriptable object
         if (gameTimer.isRunning)
             gameTimer.UpdateTimer(Time.deltaTime);
     }

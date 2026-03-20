@@ -5,28 +5,24 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity;
 public class Levitacion : MonoBehaviour
 {
     public Transform xrRig;
-
     public Transform leftHand;
     public Transform rightHand;
-
     public CharacterController characterController;
     public GravityProvider gravityProvider;
-
     public AudioSource audioSource;
     public float moveSpeed = 2f;
     public float speed = 2f;
-
-    public float holdTimeToActivate = 2f;
+    public float tiempoMantenerX = 2f;
     public float maxHeight = 10f;
-    public float maxLevitationTime = 5f;
+    public float tiempoMaxLevitacion = 15f;
 
     public InputActionReference buttonX;
 
-    private bool levitating = false;
-    private float holdTimer = 0f;
-    private float levitationTimer = 0f;
+    private bool levitando = false;
+    private float temporizadorBoton = 0f;
+    private float temporizadorLevitacion = 0f;
 
-    private float verticalVelocity = 0f;
+    private float velocidad = 0f;
 
     void OnEnable()
     {
@@ -40,45 +36,43 @@ public class Levitacion : MonoBehaviour
 
     void Update()
     {
-        bool handsDetected = leftHand != null && rightHand != null &&
-                             leftHand.gameObject.activeInHierarchy &&
-                             rightHand.gameObject.activeInHierarchy;
+        bool manosDetectadas = leftHand != null && rightHand != null && leftHand.gameObject.activeInHierarchy && rightHand.gameObject.activeInHierarchy;
 
-        if (!levitating)
+        if (!levitando)
         {
-            CheckLevitationActivation();
+            ComprobarLevitacion();
         }
         else
         {
-            levitationTimer += Time.deltaTime;
+            temporizadorLevitacion += Time.deltaTime;
 
-            if (levitationTimer >= maxLevitationTime)
+            if (temporizadorLevitacion >= tiempoMaxLevitacion)
             {
-                levitating = false;
-                levitationTimer = 0f;
-                holdTimer = 0f;
+                levitando = false;
+                temporizadorLevitacion = 0f;
+                temporizadorBoton = 0f;
 
                 if (gravityProvider != null)
                     gravityProvider.useGravity = true;
             }
         }
 
-        if (handsDetected)
+        if (manosDetectadas)
         {
-            HandleLevitationMovement();
+            Levitar();
         }
     }
 
-    void CheckLevitationActivation()
+    void ComprobarLevitacion()
     {
         if (buttonX.action.IsPressed())
         {
-            holdTimer += Time.deltaTime;
+            temporizadorBoton += Time.deltaTime;
 
-            if (holdTimer >= holdTimeToActivate && !levitating)
+            if (temporizadorBoton >= tiempoMantenerX && !levitando)
             {
-                levitating = true;
-                levitationTimer = 0f;
+                levitando = true;
+                temporizadorLevitacion = 0f;
 
                 if (audioSource != null)
                     audioSource.Play();
@@ -87,11 +81,11 @@ public class Levitacion : MonoBehaviour
         }
         else
         {
-            holdTimer = 0f;
+            temporizadorBoton = 0f;
         }
     }
 
-    void HandleLevitationMovement()
+    void Levitar()
     {
         float rightPalmRotationZ = rightHand.rotation.eulerAngles.z;
         float leftPalmRotationZ = leftHand.rotation.eulerAngles.z;
@@ -109,7 +103,7 @@ public class Levitacion : MonoBehaviour
 
         Vector3 horizontalMove = Vector3.zero;
 
-        if (levitating)
+        if (levitando)
         {
             if ((leftPalmRotationZ > 155f && leftPalmRotationZ < 220f))
             {
@@ -121,19 +115,19 @@ public class Levitacion : MonoBehaviour
             }
         }
 
-        if (levitating)
+        if (levitando)
         {
             if (gravityProvider != null)
                 gravityProvider.useGravity = false;
 
-            verticalVelocity = Mathf.Lerp(verticalVelocity, targetVertical, Time.deltaTime * 3f);
+            velocidad = Mathf.Lerp(velocidad, targetVertical, Time.deltaTime * 3f);
 
-            Vector3 move = horizontalMove + Vector3.up * verticalVelocity * Time.deltaTime;
+            Vector3 move = horizontalMove + Vector3.up * velocidad * Time.deltaTime;
 
             if (characterController.transform.position.y + move.y > maxHeight)
             {
                 move.y = maxHeight - characterController.transform.position.y;
-                verticalVelocity = 0f;
+                velocidad = 0f;
             }
 
             characterController.Move(move);
@@ -145,14 +139,14 @@ public class Levitacion : MonoBehaviour
                 if (gravityProvider != null)
                     gravityProvider.useGravity = true;
 
-                verticalVelocity = -0.5f;
+                velocidad = -0.5f;
             }
             else
             {
-                verticalVelocity += Physics.gravity.y * Time.deltaTime;
+                velocidad += Physics.gravity.y * Time.deltaTime;
             }
 
-            Vector3 move = horizontalMove + Vector3.up * verticalVelocity * Time.deltaTime;
+            Vector3 move = horizontalMove + Vector3.up * velocidad * Time.deltaTime;
             characterController.Move(move);
         }
     }

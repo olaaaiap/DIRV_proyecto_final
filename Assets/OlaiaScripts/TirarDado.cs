@@ -4,10 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class TirarDado : MonoBehaviour
 {
-    public Transform player;         // Referencia al jugador o c�mara
-    public float maxDistance = 5f;   // Distancia m�xima antes de reposicionar
-    public float torqueForce = 5f;   // Magnitud del giro aleatorio
-    public Vector3 respawnOffset = new Vector3(0, 0, 2f); // Donde aparece frente al jugador
+    public Transform player;      
+    public float maxDistance = 5f; 
+    public float torqueForce = 5f; 
+    public Vector3 respawnOffset = new Vector3(0, 0, 2f); 
     private int intentosSin3 = 0;
     public int intentosParaForzar = 4;
     public AudioSource audioCorrect;
@@ -75,9 +75,9 @@ public class TirarDado : MonoBehaviour
     {
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-
         rb.isKinematic = true;
 
+        //Forzar la rotación del dado
         transform.rotation = Quaternion.Euler(0, 0, 0);
 
         yield return new WaitForSeconds(0.5f);
@@ -87,31 +87,25 @@ public class TirarDado : MonoBehaviour
 
     bool EsCara3()
     {
-        // Qué tan alineado está el dado con el "arriba" del mundo
+        //Se que la cara 3 es donde y apunta hacia arriba
         float dot = Vector3.Dot(transform.up, Vector3.up);
-      
-
-        return dot > 0.9f; // margen para pequeñas imperfecciones
+        return dot > 0.9f;
     }
 
 
     void Update()
     {
-        // Si el dado se aleja demasiado, reposici�n frente al jugador
         float distancia = Vector3.Distance(transform.position, player.position);
         if (distancia > maxDistance)
-        {
+        { 
+            //Acercar dado para que no se vaya muy lejos
             Vector3 newPos = player.position + player.forward * respawnOffset.z + Vector3.up * respawnOffset.y;
             transform.position = newPos;
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            // Opcional: aplicar torque peque�o para realismo
-            Vector3 smallTorque = new Vector3(
-                Random.Range(-0.5f, 0.5f),
-                Random.Range(-0.5f, 0.5f),
-                Random.Range(-0.5f, 0.5f)
-            );
+            
+            Vector3 smallTorque = new Vector3( Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f),  Random.Range(-0.5f, 0.5f) );
             rb.AddTorque(smallTorque, ForceMode.Impulse);
         }
     }
